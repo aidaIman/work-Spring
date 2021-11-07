@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>User Page</title>
+</head>
+<body>
+<div align="center">
+    <table border="3" cellpadding="7">
+        <h2>Data Of User</h2>
+
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>E-mail</th>
+            <th>Roles</th>
+        </tr>
+        <tr>
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.name}"></td>
+            <td th:text="${user.email}"></td>
+            <td th:each="role : ${roles}">
+                <p th:text="${role.role}"></p>
+            </td>
+        </tr>
+    </table>
+    <a th:href="@{/logout}">Logout</a>
+</div>
+</body>
+</html>
